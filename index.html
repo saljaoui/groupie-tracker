@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists</title>
+    <style>
+        .artist-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            width: 300px;
+            display: inline-block;
+        }
+        .artist-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <form action="/artists" method="post" >
+    <h1>Artists</h1>
+    <div id="artists-container">
+        {{ range . }}
+        <div class="artist-card">
+            <img  src="{{ .Image }}" alt="{{ .Name }}">
+            <h2>{{ .Name }}</h2>
+            <p><strong>Members:</strong> {{ range .Members }}{{ . }}, {{ end }}</p>
+            <p><strong>First Album:</strong> {{ .FirstAlbum }}</p>
+            <p><strong>Concert Dates:</strong> {{ .ConcertDates }}</p>
+            Add more fields as needed
+         </div>
+        {{ end }}
+    </div>
+    <div class="cc"> 
+    {{ range . }}
+   
+    <div class="card">
+        <div class="blob"></div>
+        <img class="img" src="{{ .Image }}" alt="{{ .Name }}">
+        <!-- <a class="display active " href="">more...</a> -->
+          <h2><span>{{ .Name }}</span></h2>
+          <p>
+            <!-- <p><strong>Members:</strong> {{ range .Members }}{{ . }}, {{ end }}</p> -->
+          </p>
+</div>
+
+    {{ end }}
+
+
+
+      <script>
+        // You can add JavaScript here if needed
+   </script> 
+</form>
+</body>
+</html> 
+
+
