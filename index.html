@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artists</title>
-    <style>
-        .artist-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px;
-            width: 300px;
-            display: inline-block;
-        }
-        .artist-card img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
     <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
+
 <body>
-    <form action="/artists" method="post" >
-    <h1>Artists</h1>
-    <div id="artists-container">
+    <header class="header">
+        
+    <img src="static/soufian_icon.png" alt="" class="logoSA">
+
+    <nav class="navbar">
+        <a href="#home" >home</a>
+        <a href="#artists">artists</a>
+        <a href="#about">about</a>
+        <a href="#contact">contcat</a>
+        
+    </nav>
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div> 
+    </div>
+
+    <div class="search-artists">
+        <input type="search" id="search-box" placeholder="Search...">
+        <label for="search-box" class="fa fa-search"></label>
+    </div>
+    </header>
+    <section class="home" id="home">
+        <div class="openPageContent">
+    <h3>GROUPIE TRACKER</h3>
+    <p> i good and u ? waht are u doing </p>
+        </div>
+    
+    </section>
+    <form action="/artists" method="post">
+        <section class="artists" id="artists" >
+
+       
+        <div class="cards">
+
+        
         {{ range . }}
-        <div class="artist-card">
-            <img  src="{{ .Image }}" alt="{{ .Name }}">
-            <h2>{{ .Name }}</h2>
-            <p><strong>Members:</strong> {{ range .Members }}{{ . }}, {{ end }}</p>
-            <p><strong>First Album:</strong> {{ .FirstAlbum }}</p>
-            <p><strong>Concert Dates:</strong> {{ .ConcertDates }}</p>
-            Add more fields as needed
-         </div>
+        <div class="card" >
+            <a href="/artist/{{.ID}}" class="card-link">
+            <div class="blob"></div>
+            <img class="img" src="{{ .Image }}" alt="{{ .Name }}">
+            <h2 class="names">{{ .Name }}</h2>
+        </a>
+        </div>
         {{ end }}
     </div>
-    <div class="cc"> 
-    {{ range . }}
-   
-    <div class="card">
-        <div class="blob"></div>
-        <img class="img" src="{{ .Image }}" alt="{{ .Name }}">
-        <!-- <a class="display active " href="">more...</a> -->
-          <h2><span>{{ .Name }}</span></h2>
-          <p>
-            <!-- <p><strong>Members:</strong> {{ range .Members }}{{ . }}, {{ end }}</p> -->
-          </p>
-</div>
+</section>
+<section class="contact" id="contact">
+    <div class="contact">
 
-    {{ end }}
+    </div>
+</section>
 
 
 
-      <script>
-        // You can add JavaScript here if needed
-   </script> 
-</form>
+    </form>
+    <script>
+        document.querySelector('#search-btn').onclick = () => {
+            let searchForm = document.querySelector('.search-artists'); // Corrected variable name
+            searchForm.classList.toggle('active'); // Corrected classList method
+        };
+    </script>
 </body>
-</html> 
 
-
+</html>
