@@ -1,0 +1,244 @@
+@font-face {
+    font-family: soufian;
+    src: url(/static/SoufianFont.otf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+:root {
+    --main-color: #d3ad7f;
+    /* u can add more colors */
+    /* .... */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+    font-family: soufian;
+
+
+}
+
+.header {
+    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 50px; */
+    padding: 1.5rem 7%;
+    border-bottom: 1px solid blanchedalmond;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+    /* margin-bottom:500px ; */
+}
+
+/* .header .logoSA img {
+    height: 1rem;
+    background-color: #1B1A55;
+} */
+.logoSA {
+    height: 2rem;
+}
+
+.navbar a {
+    margin: 10px;
+    color: aliceblue;
+    border-bottom: 0px solid #535C91;
+    padding-bottom: 0px;
+
+}
+
+.navbar a:hover {
+    color: #535C91;
+    border-bottom: 2px solid #535C91;
+    transition: all 0.15s;
+    padding-bottom: 2px;
+}
+
+.icons div {
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+.icons div:hover {
+    color: #535C91;
+}
+
+.search-artists {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-artists.active {
+    transform: scaleY(1);
+}
+
+.search-artists input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+
+    color: black;
+    padding: 1rem;
+    text-transform: none;
+
+
+}
+
+.search-artists label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: aqua;
+
+}
+
+.search-artists label:hover {
+    color: blue;
+
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+    background-size: cover;
+    background-position: center;
+}
+
+
+body {
+    background-color: #1B1A55;
+}
+
+.cards {
+    text-align: center;
+}
+
+.card {
+    width: 190px;
+    height: 254px;
+    background: #9290C3;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.5s;
+    display: inline-block;
+    margin: 15px 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.623);
+    background-color: #535C91;
+    overflow: hidden;
+}
+
+.card .blob {
+    height: 10px;
+    width: 75%;
+    border-radius: 0 0 30px 30px;
+    margin: 0 auto;
+    background-color: #535C91;
+    visibility: visible;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.card:hover .blob {
+    height: 0;
+    overflow: hidden;
+}
+
+.card .img {
+    display: flex;
+    margin: 30px auto 10px auto;
+    width: 75px;
+    height: 75px;
+    background-color: #9290C3;
+    border-radius: 50%;
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.card:hover .img {
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+    background-color: #9290C3;
+    overflow: hidden;
+
+}
+
+.names {
+    font-size: 17px;
+    margin-top: 21px;
+
+
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    min-height: 30vh;
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+        overflow-x: hidden;
+        scroll-padding-top: 9rem;
+        scroll-behavior: smooth;
+    }
+
+    .header .search-artists {
+        width: 90%;
+        right: 7%;
+    }
+
+    .header .search-artists.active {
+        width: 90%;
+        right: 7%;
+    }
+}
+
+h3 {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
