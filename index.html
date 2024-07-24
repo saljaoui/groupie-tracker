@@ -6,71 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artists</title>
     <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
     <header class="header">
-        
-    <img src="static/soufian_icon.png" alt="" class="logoSA">
 
-    <nav class="navbar">
-        <a href="#home" >home</a>
-        <a href="#artists">artists</a>
-        <a href="#about">about</a>
-        <a href="#contact">contcat</a>
-        
-    </nav>
-    <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div> 
-    </div>
+        <img src="static/soufian_icon.png" alt="" class="logoSA">
 
-    <div class="search-artists">
-        <input type="search" id="search-box" placeholder="Search...">
-        <label for="search-box" class="fa fa-search"></label>
-    </div>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#artists">artists</a>
+            <a href="#about">about</a>
+            <a href="#contact">contcat</a>
+
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+        </div>
+
+        <div class="search-artists">
+            <input type="search" id="search-box" placeholder="Search...">
+            <label for="search-box" class="fa fa-search"></label>
+        </div>
     </header>
     <section class="home" id="home">
-        <div class="openPageContent">
-    <h3>GROUPIE TRACKER</h3>
-    <p> i good and u ? waht are u doing </p>
-        </div>
-    
+        <img src="/static/back1.png" alt="s" id="imag" class="background-image">
+
+        <h3 id="text">GROUPIE TRACKER</h3>
+        
     </section>
     <form action="/artists" method="post">
-        <section class="artists" id="artists" >
+        <section class="artists" id="artists">
+            <div class="cards">
+                {{ range . }}
+                <div class="card">
+                    <a href="/artist/{{.ID}}" class="card-link">
+                        <div class="blob"></div>
+                        <img class="img" src="{{ .Image }}" alt="{{ .Name }}">
+                        <h2 class="names">{{ .Name }}</h2>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact">
 
-       
-        <div class="cards">
-
-        
-        {{ range . }}
-        <div class="card" >
-            <a href="/artist/{{.ID}}" class="card-link">
-            <div class="blob"></div>
-            <img class="img" src="{{ .Image }}" alt="{{ .Name }}">
-            <h2 class="names">{{ .Name }}</h2>
-        </a>
-        </div>
-        {{ end }}
-    </div>
-</section>
-<section class="contact" id="contact">
-    <div class="contact">
-
-    </div>
-</section>
+            </div>
+        </section>
 
 
 
     </form>
-    <script>
-        document.querySelector('#search-btn').onclick = () => {
-            let searchForm = document.querySelector('.search-artists'); // Corrected variable name
-            searchForm.classList.toggle('active'); // Corrected classList method
-        };
-    </script>
+    <script src="static/script.js"></script>
 </body>
 
 </html>
