@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 </head>
 
@@ -18,8 +19,8 @@
 
         <nav class="navbar">
             <a href="#home">home</a>
-            <a href="#artists">artists</a>
             <a href="#about">about</a>
+            <a href="#artists">artists</a>
             <a href="#contact">contcat</a>
 
         </nav>
@@ -29,7 +30,6 @@
 
         <div class="search-artists">
             <input type="search" id="search-box" placeholder="Search...">
-            <label for="search-box" class="fa fa-search"></label>
         </div>
     </header>
     <section class="home" id="home">
@@ -38,9 +38,32 @@
         <h3 id="text">GROUPIE TRACKER</h3>
         
     </section>
+
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Groupie Trackers</h2>
+            <p>Groupie Trackers is a web application that utilizes a designated API to gather and manipulate data related to bands and artists. The application focuses on presenting this information in an accessible manner through various data visualization techniques.</p>
+            <h2>Website Features</h2>
+            <p>The primary objective of Groupie Trackers is to create a user-friendly interface that visualizes band information using diverse methods such as blocks, cards, tables, lists, and graphical representations. These features aim to enhance usability and engagement.</p>
+            <div>
+    </section>
+    
+
+
+
+
+
+
+
     <form action="/artists" method="post">
         <section class="artists" id="artists">
+
+
+            
             <div class="cards">
+                <h2 class="titleart">Artists</h2>
                 {{ range . }}
                 <div class="card">
                     <a href="/artist/{{.ID}}" class="card-link">
