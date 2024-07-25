@@ -158,11 +158,39 @@ body {
     border-radius: 10px;
     text-align: center;
     transition: all 0.5s;
-    display: inline-block;
+    /* display: inline-block; */
+    display: none;
     margin: 15px 10px;
     overflow: hidden;
     font-family: 'Poppins';
 }
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4),
+.card:nth-child(5),
+.card:nth-child(6),
+.card:nth-child(7),
+.card:nth-child(8),
+.card:nth-child(9),
+.card:nth-child(10),
+.card:nth-child(11),
+.card:nth-child(12),
+.card:nth-child(13),
+.card:nth-child(14),
+.card:nth-child(15),
+.card:nth-child(16),
+.card:nth-child(17),
+.card:nth-child(18),
+.card:nth-child(19),
+.card:nth-child(20),
+.card:nth-child(21),
+.card:nth-child(22),
+.card:nth-child(23),
+.card:nth-child(24),
+.card:nth-child(25){
+    display: inline-block;
+}
+
 
 
 .card:hover {
@@ -308,4 +336,13 @@ body {
     font-family: 'Poppins';
     font-size: 20px;
     margin-bottom: 40px;
+}
+#load-more {
+display: inline-block;
+font-size: 15px;
+background-color: aqua;
+cursor: pointer;
+
+
+
 }

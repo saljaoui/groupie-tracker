@@ -14,3 +14,13 @@ if (value >= 250) {
     text.style.display = "block"
 }
 });
+
+let loadMoreBtn = document.querySelector('#load-more');
+let currentItem = 24;
+loadMoreBtn.onclick = () => {
+    let boxes = [...document.querySelectorAll('.cards .card')];
+    for (let i = currentItem; i < currentItem + 24 && i < boxes.length; i++){
+        boxes[i].style.display = 'inline-block'
+    }
+    currentItem += 24;
+};
