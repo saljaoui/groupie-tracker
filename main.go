@@ -31,8 +31,8 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	fmt.Println("Server listening on port 8060...")
-	fmt.Println("http://localhost:8070/artists")
-	log.Fatal(http.ListenAndServe(":8070", nil))
+	fmt.Println("http://localhost:8080/artists")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func artistDetailHandler(w http.ResponseWriter, r *http.Request) {

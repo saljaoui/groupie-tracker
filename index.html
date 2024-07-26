@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artists</title>
     <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 </head>
 
@@ -36,7 +37,7 @@
         <img src="/static/back1.png" alt="s" id="imag" class="background-image">
 
         <h3 id="text">GROUPIE TRACKER</h3>
-        
+
     </section>
 
 
@@ -44,12 +45,16 @@
     <section class="about" id="about">
         <div class="container">
             <h2>About <span style="color: #d39c51;">Groupie Trackers</span></h2>
-            <p>Groupie Trackers is a web application that utilizes a designated API to gather and manipulate data related to bands and artists. The application focuses on presenting this information in an accessible manner through various data visualization techniques.</p>
+            <p>Groupie Trackers is a web application that utilizes a designated API to gather and manipulate data
+                related to bands and artists. The application focuses on presenting this information in an accessible
+                manner through various data visualization techniques.</p>
             <h2>Website Features</h2>
-            <p>The primary objective of Groupie Trackers is to create a user-friendly interface that visualizes band information using diverse methods such as blocks, cards, tables, lists, and graphical representations. These features aim to enhance usability and engagement.</p>
+            <p>The primary objective of Groupie Trackers is to create a user-friendly interface that visualizes band
+                information using diverse methods such as blocks, cards, tables, lists, and graphical representations.
+                These features aim to enhance usability and engagement.</p>
             <div>
     </section>
-    
+
 
 
 
@@ -61,7 +66,7 @@
         <section class="artists" id="artists">
 
 
-            
+
             <div class="cards">
                 <h2 class="titleart">Artists</h2>
                 {{ range . }}
@@ -73,17 +78,35 @@
                     </a>
                 </div>
                 {{ end }}
+
             </div>
             <div id="load-more"> load more ></div>
+
         </section>
         <section class="contact" id="contact">
-            <div class="contact">
-
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#artists">artists</a>
+            </nav>
+            <h2 style="color: #d39c51;">contact</h2>
+            <h2>soufian2022ff@gmail.com</h2>
+            <h2>+212 77 108 1736</h2>
+            <div class="iconsContact">
+                <a href="https://github.com/saljaoui">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/soufian-aljaoui-2004saljaoui/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/soufian.alj">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
+
+
+
         </section>
-
-
-
     </form>
     <script src="static/script.js"></script>
 </body>
