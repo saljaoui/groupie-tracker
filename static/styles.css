@@ -337,12 +337,10 @@ body {
     font-size: 20px;
     margin-bottom: 40px;
 }
+
 #load-more {
 display: inline-block;
 font-size: 15px;
 background-color: aqua;
 cursor: pointer;
-
-
-
 }
