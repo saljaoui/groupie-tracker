@@ -26,18 +26,17 @@ type Relations struct {
 }
 
 func main() {
-	http.HandleFunc("/artists", artistsHandler)
-	http.HandleFunc("/artist/", artistDetailHandler)
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.HandleFunc("/", artistsHandler)
+	http.HandleFunc("/artist/", artistDetailHandler)
 	fmt.Println("Server listening on port 8060...")
-	fmt.Println("http://localhost:8080/artists")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	fmt.Println("http://localhost:8050")
+	log.Fatal(http.ListenAndServe(":8050", nil))
 }
 
 func artistDetailHandler(w http.ResponseWriter, r *http.Request) {
 	id := r.URL.Path[len("/artist/"):]
-
 	// Fetch artist details
 	artistResp, err := http.Get(fmt.Sprintf("https://groupietrackers.herokuapp.com/api/artists/%s", id))
 	if err != nil {

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Artist.Name}} - Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>{{.Artist.Name}}</h1>
-    <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
-    
+    <section class="ditailPage">
+
+    <div class="picartist">
+        <h1>{{.Artist.Name}}</h1>
+        <img src="{{.Artist.Image}}" alt="Pic of {{.Artist.Name}}">
+    </div>
+
+    <div class="ditailartist">
     <h2>Band Information</h2>
     <p>Members: {{range .Artist.Members}}{{.}}, {{end}}</p>
     <p>Creation Date: {{.Artist.CreationDate}}</p>
@@ -21,6 +29,8 @@
         {{end}}
         </ul>
     {{end}}
-    <a href="/artists">Back to all artists</a>
+</div>
+    <a href="/">Back to all artists</a>
+</section>
 </body>
 </html>
