@@ -19,7 +19,9 @@
 :root {
     --main-color: #d3ad7f;
     --backGround-color: #000207;
-
+    --text-color:#fff;
+    --card-first_color:#232323;
+    --card-second_cooer:#4f4f4f;
 }
 
 html {
@@ -28,8 +30,6 @@ html {
     scroll-padding-top: 9rem;
     scroll-behavior: smooth;
     font-family: soufian;
-
-
 }
 
 .header {
