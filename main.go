@@ -29,17 +29,18 @@ var tmpl *template.Template
 
 func main() {
 	var err error
-	tmpl, err = template.ParseGlob("templates/*.html")
+	tmpl, err = template.ParseGlob("templates/html/*.html")
 	if err != nil {
 		log.Fatalf("Error parsing templates: %v", err)
 	}
+
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", artistsHandler)
 	http.HandleFunc("/artist/", artistDetailHandler)
 
 	fmt.Println("Server listening on port 8050...")
-	fmt.Println("http://localhost:8050")
-	log.Fatal(http.ListenAndServe(":8050", nil))
+	fmt.Println("http://localhost:8060")
+	log.Fatal(http.ListenAndServe(":8060", nil))
 }
 
 func artistDetailHandler(w http.ResponseWriter, r *http.Request) {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: soufian;
-    src: url(/static/SoufianFont.otf);
+    src: url(/static/font/SoufianFont.otf);
 }
 
 
@@ -132,7 +132,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/static/1.jpg");
+    background-image: url("/static/img/1.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
