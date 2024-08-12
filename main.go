@@ -25,18 +25,26 @@ type Relations struct {
 	DatesLocations map[string][]string `json:"datesLocations"`
 }
 
-func main() {
+var tmpl *template.Template
 
+func main() {
+	var err error
+	tmpl, err = template.ParseGlob("templates/*.html")
+	if err != nil {
+		log.Fatalf("Error parsing templates: %v", err)
+	}
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", artistsHandler)
 	http.HandleFunc("/artist/", artistDetailHandler)
-	fmt.Println("Server listening on port 8060...")
+
+	fmt.Println("Server listening on port 8050...")
 	fmt.Println("http://localhost:8050")
 	log.Fatal(http.ListenAndServe(":8050", nil))
 }
 
 func artistDetailHandler(w http.ResponseWriter, r *http.Request) {
 	id := r.URL.Path[len("/artist/"):]
+
 	// Fetch artist details
 	artistResp, err := http.Get(fmt.Sprintf("https://groupietrackers.herokuapp.com/api/artists/%s", id))
 	if err != nil {
@@ -73,10 +81,9 @@ func artistDetailHandler(w http.ResponseWriter, r *http.Request) {
 		Artist:    artist,
 		Relations: relations,
 	}
-	
+
 	// Execute HTML template for artist details
-	tmpl := template.Must(template.ParseFiles("artist_detail.html"))
-	err = tmpl.Execute(w, data)
+	err = tmpl.ExecuteTemplate(w, "artist_detail.html", data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -98,8 +105,7 @@ func artistsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Execute HTML template
-	tmpl := template.Must(template.ParseFiles("index.html")) // Adjust path as needed
-	err = tmpl.Execute(w, artists)
+	err = tmpl.ExecuteTemplate(w, "index.html", artists)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
