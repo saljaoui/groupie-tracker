@@ -3,8 +3,6 @@
     src: url(/static/font/SoufianFont.otf);
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -18,10 +16,17 @@
 
 :root {
     --main-color: #d3ad7f;
-    --backGround-color: #000207;
-    --text-color:#fff;
-    --card-first_color:#232323;
-    --card-second_cooer:#4f4f4f;
+    --background-color: #000207;
+    --text-color: #fff;
+    --card-first-color: #232323;
+    --card-second-color: #4f4f4f;
+    --header-border-color: rgba(255, 255, 255, 0.2);
+    --navbar-link-color: rgba(255, 255, 255, 0.6);
+    --icon-color: rgba(255, 255, 255, 0.5);
+    --search-border-color: rgba(255, 255, 255, 0.5);
+    --search-background-color: rgba(255, 255, 255, 0.1);
+    --contact-background-color: #212121;
+    --load-more-color: #d39c51;
 }
 
 html {
@@ -35,19 +40,16 @@ html {
 .header {
     background-color: transparent;
     backdrop-filter: blur(15px);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 1.5rem 7%;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid var(--header-border-color);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-
 }
 
 .logoSA {
@@ -56,29 +58,27 @@ html {
 
 .navbar a {
     margin: 10px;
-    color: rgba(255, 255, 255, 0.6);
-    ;
-    border-bottom: 0px solid rgba(255, 255, 255, 0.2);
+    color: var(--navbar-link-color);
+    border-bottom: 0px solid var(--header-border-color);
     padding-bottom: 0px;
-
 }
 
 .navbar a:hover {
-    color: #ffffff;
-    border-bottom: 2px solid #ffffff;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color);
     transition: all 0.15s;
     padding-bottom: 2px;
 }
 
 .icons div {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--icon-color);
     cursor: pointer;
     font-size: 15px;
     margin-left: 30px;
 }
 
 .icons div:hover {
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .search-artists {
@@ -86,7 +86,6 @@ html {
     right: 10%;
     height: 5rem;
     display: flex;
-
     align-items: center;
     transform: scalex(0);
     transform-origin: right;
@@ -101,21 +100,17 @@ html {
     width: 100%;
     font-size: 1.5rem;
     text-transform: none;
-
     background: transparent;
-
     height: 40px;
     border-radius: 15px;
-    color: #ffffff;
+    color: var(--text-color);
     padding: 1rem;
-
 }
 
 .search-artists label {
     cursor: pointer;
     font-size: 2.2rem;
     margin-right: 1.5rem;
-
 }
 
 .search-artists label:hover {
@@ -123,8 +118,8 @@ html {
 }
 
 #search-box {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--search-border-color);
+    background: var(--search-background-color);
 }
 
 .home {
@@ -138,10 +133,8 @@ html {
     position: relative;
 }
 
-
-
 body {
-    background-color: #000207;
+    background-color: var(--background-color);
     min-height: 100vh;
     overflow: hidden;
 }
@@ -155,12 +148,10 @@ body {
 .card {
     width: 190px;
     height: 254px;
-    background: #232323;
-    /* border: 2px solid rgba(255, 255, 255, 0.2); */
+    background: var(--card-first-color);
     border-radius: 10px;
     text-align: center;
     transition: all 0.5s;
-    /* display: inline-block; */
     display: none;
     margin: 15px 10px;
     overflow: hidden;
@@ -194,13 +185,11 @@ body {
     display: inline-block;
 }
 
-
-
 .card:hover {
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.623);
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: #4f4f4f;
+    border: 2px solid var(--header-border-color);
+    background: var(--card-second-color);
 }
 
 .card .blob {
@@ -208,7 +197,7 @@ body {
     width: 75%;
     border-radius: 0 0 30px 30px;
     margin: 0 auto;
-    background-color: #4f4f4f;
+    background-color: var(--card-second-color);
     visibility: visible;
     transition: all 0.3s;
     overflow: hidden;
@@ -238,55 +227,30 @@ body {
     border-radius: 10px 10px 0 0;
     margin: 0 auto;
     overflow: hidden;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-
+    border-bottom: 2px solid var(--header-border-color);
 }
-
 
 .names {
     font-size: 17px;
     margin-top: 21px;
-    color: #fff;
+    color: var(--text-color);
 }
-
 
 .contact {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    background: #212121;
+    background: var(--contact-background-color);
     min-height: 24vh;
     flex-direction: column;
     gap: 20px;
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 2px solid var(--header-border-color);
 }
-
-/* 
-@media (max-width:991px) {
-    html {
-        font-size: 55%;
-        overflow-x: hidden;
-        scroll-padding-top: 9rem;
-        scroll-behavior: smooth;
-    }
-
-    .header .search-artists {
-        width: 90%;
-        right: 7%;
-    }
-
-    .header .search-artists.active {
-        width: 90%;
-        right: 7%;
-    }
-} */
 
 #text {
     font-size: 90px;
     min-height: 20vh;
-    color: #ffffff;
+    color: var(--text-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-
 }
 
 #artists {
@@ -302,19 +266,16 @@ body {
     object-fit: cover;
 }
 
-
 .about {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--backGround-color);
+    background-color: var(--background-color);
     min-height: 20vh;
-    /* background-color: orange; */
-
 }
 
 .container {
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -322,15 +283,12 @@ body {
     flex-direction: column;
     padding-bottom: 100px;
     font-family: 'Poppins';
-
-
 }
 
 .container h2 {
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 50px;
-
 }
 
 .container p {
@@ -339,7 +297,7 @@ body {
 }
 
 .cards .titleart {
-    color: #fff;
+    color: var(--text-color);
     font-family: 'Poppins';
     font-size: 20px;
     margin-bottom: 40px;
@@ -350,29 +308,28 @@ body {
     display: flex;
     justify-content: center;
     font-size: 13px;
-    color: #d39c51;
+    color: var(--load-more-color);
     cursor: pointer;
-
     margin-bottom: 20px;
-    
     font-family: 'Poppins';
 }
+
 #Load-less {
     display: none;
 }
+
 .contact .navbar {
     margin-top: 20px;
-
-    
 }
+
 .contact h2 {
-    color: #fff;
+    color: var(--text-color);
     font-family: 'Poppins';
 }
-.iconsContact i{
+
+.iconsContact i {
     font-size: 25px;
-    color: #fff;
-    margin: 0px ;
+    color: var(--text-color);
     margin: 0px 10px;
 }
 
