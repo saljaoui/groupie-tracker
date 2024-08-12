@@ -334,10 +334,113 @@ body {
 }
 
 
+/* Media Queries */
 
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    html {
+        font-size: 55%;
+    }
 
+    .header {
+        padding: 1.5rem 2%;
+    }
 
+    .cards {
+        padding: 0 2%;
+    }
 
+    .card {
+        width: 160px;
+        height: 220px;
+    }
+
+    #text {
+        font-size: 70px;
+    }
+}
+
+/* For larger phones and small tablets */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    /* .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: var(--background-color);
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    } */
+/* 
+    .navbar.active {
+        right: 0;
+    } */
+
+    /* .navbar a {
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    } */
+
+    .search-artists {
+        width: 90%;
+        right: 2rem;
+    }
+
+    .card {
+        width: 140px;
+        height: 200px;
+    }
+
+    #text {
+        font-size: 50px;
+    }
+
+    .container p {
+        max-width: 70%;
+    }
+}
+
+/* For smaller phones */
+@media (max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .logoSA {
+        height: 1.5rem;
+    }
+
+    .search-artists {
+        width: 90%;
+        right: 1rem;
+    }
+
+    .card {
+        width: 120px;
+        height: 180px;
+    }
+
+    #text {
+        font-size: 40px;
+    }
+
+    .container p {
+        max-width: 90%;
+    }
+
+    .iconsContact i {
+        font-size: 20px;
+    }
+}
 
 /* ****************************************************** */
 /* ******************************************************** */

@@ -49,7 +49,4 @@ loadLessBtn.onclick = () => {
     if (currentItem <= 24) {
         load2.style.display = 'none'
     }
-    // if (currentItem <= 24) {
-    //     load2.style.display = 'none'
-    // }
 };
