@@ -1,36 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{.Artist.Name}} - Details</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>vCard - Personal Portfolio</title>
+    <!-- custom css link -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="ditailPage">
-
-    <div class="picartist">
-        <h1>{{.Artist.Name}}</h1>
-        <img src="{{.Artist.Image}}" alt="Pic of {{.Artist.Name}}">
-    </div>
-
-    <div class="ditailartist">
-    <h2>Band Information</h2>
-    <p>Members: {{range .Artist.Members}}{{.}}, {{end}}</p>
-    <p>Creation Date: {{.Artist.CreationDate}}</p>
-    <p>First Album: {{.Artist.FirstAlbum}}</p>
-
-    <h2>Concert Dates and Locations</h2>
-    {{range $location, $dates := .Relations.DatesLocations}}
-        <h3>{{$location}}</h3>
-        <ul>
-        {{range $dates}}
-            <li>{{.}}</li>
-        {{end}}
-        </ul>
-    {{end}}
-</div>
-    <a href="/">Back to all artists</a>
-</section>
+    <!-- #MAIN -->
+    <main>
+        <!-- #SIDEBAR -->
+        <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+                <figure class="avatar-box">
+                    <img src="{{ .Image }}" alt="{{ .Name }}" width="80">
+                </figure>
+                <div class="info-content">
+                    <h1 class="name" title="{{ .Name }}">{{ .Name }}</h1>
+                    <p class="title">Artist</p>
+                </div>
+            </div>
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        <div class="contact-info">
+                            <p class="contact-title">Members:</p>
+                            {{ range .Members }}
+                            <a class="contact-link">{{ . }}</a>
+                            {{ end }}
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-info">
+                            <p class="contact-title">Creation Date:</p>
+                            <a class="contact-link">{{ .CreationDate }}</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-info">
+                            <p class="contact-title">First Album:</p>
+                            <time datetime="{{ .FirstAlbum }}">{{ .FirstAlbum }}</time>
+                        </div>
+                    </li>
+                </ul>
+                <div class="separator"></div>
+            </div>
+        </aside>
+        <div class="main-content">
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <button class="navbar-link active" data-nav-link>Date</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Locations</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Relation</button>
+                    </li>
+                </ul>
+            </nav>
+            <article class="about active" data-page="about">
+                <header>
+                    <h2 class="h2 article-title">Date</h2>
+                </header>
+                <section class="about-text">
+                    <p>
+                        {{ .Name }} began their musical journey with the release of their debut album in {{ .FirstAlbum }}.
+                        This initial release marked the beginning of {{ .Name }}'s career and laid the groundwork for their future achievements in the music industry.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
 </body>
 </html>

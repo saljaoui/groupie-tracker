@@ -38,7 +38,7 @@ func main() {
 	http.HandleFunc("/", artistsHandler)
 	http.HandleFunc("/artist/", artistDetailHandler)
 
-	fmt.Println("Server listening on port 8050...")
+	fmt.Println("Server listening on port 8060...")
 	fmt.Println("http://localhost:8060")
 	log.Fatal(http.ListenAndServe(":8060", nil))
 }
@@ -74,17 +74,8 @@ func artistDetailHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Combine artist and relations data
-	data := struct {
-		Artist    Artists
-		Relations Relations
-	}{
-		Artist:    artist,
-		Relations: relations,
-	}
-
 	// Execute HTML template for artist details
-	err = tmpl.ExecuteTemplate(w, "artist_detail.html", data)
+	err = tmpl.ExecuteTemplate(w, "artist_detail.html", artist)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
