@@ -403,6 +403,9 @@ body {
     .container p {
         max-width: 70%;
     }
+    .names {
+        font-size: 15px;
+    }
 }
 
 /* For smaller phones */
@@ -430,7 +433,7 @@ body {
     }
 
     #text {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .container p {
@@ -439,6 +442,9 @@ body {
 
     .iconsContact i {
         font-size: 20px;
+    }
+    .names {
+        font-size: 13px;
     }
 }
 

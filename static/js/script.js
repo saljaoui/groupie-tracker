@@ -7,8 +7,8 @@ let text = document.getElementById('text');
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
 text.style.marginTop = value * 2.5 + 'px';
-// console.log(value)
-if (value >= 250) {
+console.log(value)
+if (value >= 265) {
     text.style.display = "none" 
 } else {
     text.style.display = "block"
